@@ -10,6 +10,7 @@ http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mu
 	</http:listener-config>
 	<flow name="jenkinstestFlow" doc:id="c5ef4248-40ae-407c-8a72-5d1eac27ad59" >
 		<http:listener doc:name="Listener" doc:id="f287139c-2cb4-4999-b91f-8bd19c6cf418" config-ref="HTTP_Listener_config" path="/jenkins"/>
+		<logger level="INFO" doc:name="Logger" doc:id="d6614653-778b-413c-a06c-9f2b1be0814e" message="-----------Starting Application---------"/>
 		<set-payload value="Amrendra" doc:name="Set Payload" doc:id="73100c71-b6f6-48c2-97fe-c0afb5eb36d5" />
 		<validation:is-not-null doc:name="Is not null" doc:id="cc2dbc1b-2b99-439e-ba35-55c33479dd30" value="#[payload]" message="payload is null"/>
 		<logger level="INFO" doc:name="Logger" doc:id="01d72a6c-c57e-4a5b-9162-a5f8cdf7f0d1" message="#[payload]"/>
